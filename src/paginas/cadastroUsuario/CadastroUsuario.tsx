@@ -19,7 +19,7 @@ function CadastroUsuario () {
             email: "",
             senha: "",
             foto: "",
-            tipo: ""
+            tipo: "NORMAL"
         }
     );
 
@@ -30,7 +30,7 @@ function CadastroUsuario () {
             email: "",
             senha: "",
             foto: "",
-            tipo: ""
+            tipo: "NORMAL"
         }
     );
 
@@ -104,26 +104,6 @@ function CadastroUsuario () {
                             value={usuario.foto}
                             onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id='foto' label='foto' variant='outlined' name='foto' margin='normal' fullWidth />
-                        
-                        
-                        <FormControl 
-                            onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            variant="outlined">
-                            <InputLabel htmlFor="outlined-age-native-simple">tipo</InputLabel>
-                            <Select
-                            value={usuario.tipo}
-                            native
-                            label="tipo"
-                            inputProps={{
-                                name: 'tipo',
-                                id: 'outlined-age-native-simple',
-                            }}
-                            >
-                            <option aria-label="None" value="" />
-                            <option value="NORMAL">NORMAL</option>
-                            <option value="ADMINISTRADOR">ADMINISTRADOR</option>
-                            </Select>
-                        </FormControl>
                         
                         <Grid container direction="row" justifyContent="space-between" alignItems="center">
                             <Box marginY={2} textAlign='center'>
