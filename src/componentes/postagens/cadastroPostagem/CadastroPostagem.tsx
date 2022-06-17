@@ -8,6 +8,7 @@ import Postagem from '../../../modelos/Postagem';
 import { busca, buscaId, post, put } from '../../../servicos/Servicos';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroPostagem() {
 
@@ -91,14 +92,14 @@ function CadastroPostagem() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+            toast.success('Postagem atualizada com sucesso');
         } else {
             post(`/api/Postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+            toast.success('Postagem cadastrada com sucesso');
         }
         back()
 

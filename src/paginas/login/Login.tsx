@@ -8,6 +8,7 @@ import Usuario from "../../modelos/Usuario";
 import './Login.css';
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/actions";
+import { toast } from "react-toastify";
 
 function Login() {
 
@@ -43,9 +44,9 @@ function Login() {
 
             await login(`/api/Usuarios/logar`, usuario, setToken, setIdCriador);
 
-            alert('Usuário logado com sucesso!');
+            toast.success('Usuário logado com sucesso!');
         } catch (error) {
-            alert('Dados do usuário inconsistentes. Erro ao logar!');
+            toast.warning('Dados do usuário inconsistentes. Erro ao logar!');
         }
     }
 

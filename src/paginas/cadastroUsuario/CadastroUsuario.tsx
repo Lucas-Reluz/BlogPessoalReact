@@ -5,6 +5,7 @@ import Usuario from "../../modelos/Usuario";
 import { Grid, Typography, Button, TextField, FormControl, InputLabel, Select } from '@material-ui/core';
 import { Box } from "@mui/material";
 import './CadastroUsuario.css';
+import { toast } from "react-toastify";
 
 function CadastroUsuario () {
 
@@ -61,13 +62,13 @@ function CadastroUsuario () {
         if(confirmarSenha === usuario.senha){
             try {
                 await cadastroUsuario(`/api/Usuarios/cadastrar`, usuario, setUsuarioResultado)
-                alert('Usuario cadastrado com sucesso')
+                toast.success('Usuario cadastrado com sucesso')
             } catch (error) {
-                alert('Usuario já cadastrado, tente outro email!')
+                toast.warning('Usuario já cadastrado, tente outro email!')
             }
 
         }else{
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.')
         }
     }
 
