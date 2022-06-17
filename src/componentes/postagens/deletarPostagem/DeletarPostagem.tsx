@@ -8,6 +8,7 @@ import { buscaId, deleteId } from '../../../servicos/Servicos';
 import { Box } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function DeletarPostagem() {
 
@@ -47,7 +48,17 @@ function DeletarPostagem() {
                 'Authorization': token
             }
         });
-        alert('Postagem deletada com sucesso');
+        toast.info('Postagem deletada com sucesso!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            type: "success",
+            theme: "colored"
+        });
     }
 
     function nao() {

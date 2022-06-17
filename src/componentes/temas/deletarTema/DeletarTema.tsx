@@ -8,6 +8,7 @@ import Tema from '../../../modelos/Tema';
 import { Box } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function DeletarTema() {
@@ -48,7 +49,17 @@ function DeletarTema() {
                 'Authorization': token
             }
         });
-        alert('Tema deletado com sucesso');
+        toast.info('Tema deletado com sucesso!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            type: "success",
+            theme: "colored"
+        });
     }
 
     function nao() {

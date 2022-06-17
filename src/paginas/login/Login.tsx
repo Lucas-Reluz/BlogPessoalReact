@@ -44,9 +44,29 @@ function Login() {
 
             await login(`/api/Usuarios/logar`, usuario, setToken, setIdCriador);
 
-            toast.success('Usuário logado com sucesso!');
+            toast.info('Usuario logado com sucesso!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                type: "success",
+                theme: "colored"
+            });
         } catch (error) {
-            toast.warning('Dados do usuário inconsistentes. Erro ao logar!');
+            toast.info('Erro ao logar, dados inconsistentes', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                type: "error",
+                theme: "colored"
+            });
         }
     }
 

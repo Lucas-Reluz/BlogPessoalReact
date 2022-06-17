@@ -62,13 +62,43 @@ function CadastroUsuario () {
         if(confirmarSenha === usuario.senha){
             try {
                 await cadastroUsuario(`/api/Usuarios/cadastrar`, usuario, setUsuarioResultado)
-                toast.success('Usuario cadastrado com sucesso')
+                toast.info('Usuario cadastrado com sucesso!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    progress: undefined,
+                    type: "success",
+                    theme: "colored"
+                });
             } catch (error) {
-                toast.warning('Usuario já cadastrado, tente outro email!')
+                toast.info('Usuario já cadastrado, tente outro email!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    progress: undefined,
+                    type: "warning",
+                    theme: "colored"
+                });
             }
 
         }else{
-            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.')
+            toast.info('Dados Inconsistentes, por favor tente novamente!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                type: "error",
+                theme: "colored"
+            });
         }
     }
 

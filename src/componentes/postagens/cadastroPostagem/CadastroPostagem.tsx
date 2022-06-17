@@ -92,14 +92,34 @@ function CadastroPostagem() {
                     'Authorization': token
                 }
             })
-            toast.success('Postagem atualizada com sucesso');
+            toast.info('Postagem atualizada com sucesso!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                type: "success",
+                theme: "colored"
+            });
         } else {
             post(`/api/Postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            toast.success('Postagem cadastrada com sucesso');
+            toast.info('Postagem cadastrada com sucesso!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                type: "success",
+                theme: "colored"
+            });
         }
         back()
 
