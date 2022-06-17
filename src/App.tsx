@@ -14,11 +14,13 @@ import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPost
 import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
+      <ToastContainer />
         <Navbar />
         <Routes>
           <Route path="/" element={<Login />} />
